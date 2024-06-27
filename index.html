@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Empleados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="main-title">Registro de Empleados</h1>
+    </header>
+    <main>
+        <section class="form-section">
+            <form id="employeeForm">
+                <div class="form-group">
+                    <label for="firstName">Nombre:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Apellidos:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Género:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="male" name="gender" value="Masculino" required>
+                        <label for="male">Masculino</label>
+                        <input type="radio" id="female" name="gender" value="Femenino">
+                        <label for="female">Femenino</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="maritalStatus">Estado Civil:</label>
+                    <select id="maritalStatus" name="maritalStatus" required>
+                        <option value="Soltero">Soltero</option>
+                        <option value="Casado">Casado</option>
+                        <option value="Viudo">Viudo</option>
+                        <option value="Divorciado">Divorciado</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="salary">Sueldo $:</label>
+                    <div class="input-group">
+                        <input type="number" id="salary" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" onclick="agregar()">Agregar</button>
+                </div>
+            </form>
+        </section>
+        <div class="spacer"></div>
+
+        <section class="table-section">
+            <h2>Lista de Empleados</h2>
+            <div class="buttons">
+                <button type="button" onclick="filtrarPorGenero('Masculino')">Filtrar Masculino</button>
+                <button type="button" onclick="filtrarPorGenero('Femenino')">Filtrar Femenino</button>
+                <button type="button" onclick="mostrarTodos()">Mostrar Todos</button>
+            </div>
+            <table id="employeeTable">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Género</th>
+                        <th>Estado Civil</th>
+                        <th>Sueldo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Gestión de Empleados</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
